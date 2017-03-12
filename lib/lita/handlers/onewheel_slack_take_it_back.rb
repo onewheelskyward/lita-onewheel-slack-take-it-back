@@ -9,12 +9,14 @@ module Lita
       def handle_cosmos(response)
         resp = response.reply "Some text"
         Lita.logger.debug resp
-        redis.set('slack_last', resp)
+        redis.hset('stib', 'last', resp)
+        # redis.set('slack_last', resp)
       end
 
       def handle_delete(response)
         Lita.logger.debug "Hangling delete"
-        Lita.logger.debug "#{redis.get('slack_last')}"
+        Lita.logger.debug redis.hget('stib', 'last')
+        response.reply redis.hget('stib', 'last')
       end
     end
 
