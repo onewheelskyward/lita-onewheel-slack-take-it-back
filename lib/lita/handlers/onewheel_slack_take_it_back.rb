@@ -8,8 +8,9 @@ module Lita
 
       def handle_cosmos(response)
         resp = response.reply "Some text"
-        Lita.logger.debug resp
-        redis.hset('stib', 'last', resp)
+        Lita.logger.debug resp.inspect
+        m = redis.hset('stib', 'last', resp)
+        Lita.logger.debug m
         # redis.set('slack_last', resp)
       end
 
