@@ -7,7 +7,7 @@ module Lita
             :handle_cosmos)
 
       def handle_cosmos(response)
-        resp = response.reply RestClient::get('https://kpp0tmzh76.execute-api.us-west-2.amazonaws.com/prod/nasaapod')
+        resp = response.reply "Some text"
         Lita.logger.debug resp
         redis.set('slack_last', resp)
       end
