@@ -1,5 +1,3 @@
-require 'rest-client'
-
 module Lita
   module Handlers
     class OnewheelSlackTakeItBack < Handler
