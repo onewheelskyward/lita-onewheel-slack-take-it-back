@@ -12,7 +12,7 @@ module Lita
         redis.set('slack_last', resp)
       end
 
-      def handle_delete
+      def handle_delete(response)
         Lita.logger.debug "Hangling delete"
         Lita.logger.debug "#{redis.get('slack_last')}"
       end
