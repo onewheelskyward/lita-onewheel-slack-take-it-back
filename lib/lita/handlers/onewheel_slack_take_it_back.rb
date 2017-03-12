@@ -10,6 +10,7 @@ module Lita
         resp = response.reply "Some text"
         Lita.logger.debug resp.inspect
         m = redis.hset('stib', 'last', resp.to_s)
+        redis.hset('stib', 'one', 'two')
         Lita.logger.debug "Redis response: #{m}"
         # redis.set('slack_last', resp)
       end
@@ -17,7 +18,8 @@ module Lita
       def handle_delete(response)
         Lita.logger.debug "Hangling delete"
         Lita.logger.debug redis.hget('stib', 'last')
-        response.reply redis.hget('stib', 'last')
+        Lita.logger.debug redis.hget('stib', 'one')
+        # response.reply redis.hget('stib', 'last')
       end
     end
 
