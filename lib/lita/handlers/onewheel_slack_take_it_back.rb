@@ -19,7 +19,7 @@ module Lita
         Lita.logger.debug Lita.adapters.inspect
         Lita.logger.debug Lita.adapters[:slack].inspect
         Lita.logger.debug Lita.adapters[:slack]::API.inspect
-        Lita.adapters[:slack]::API::call_api('delete')
+        Lita.adapters[:slack]::API.new.call_api('delete')
       end
     end
 
