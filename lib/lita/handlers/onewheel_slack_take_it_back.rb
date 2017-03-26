@@ -19,7 +19,8 @@ module Lita
         Lita.logger.debug Lita.adapters.inspect
         Lita.logger.debug Lita.adapters[:slack].inspect
         Lita.logger.debug Lita.adapters[:slack]::API.inspect
-        slack_config = {token: config.adapters.slack.token}
+        Lita.logger.debug Lita.config.inspect
+        slack_config = {token: Lita.config.adapters.slack.token}
         Lita.logger.debug(slack_config)
         Lita.adapters[:slack]::API.new(slack_config).call_api('delete')
       end
