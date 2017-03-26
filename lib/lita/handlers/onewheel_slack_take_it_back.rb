@@ -20,6 +20,7 @@ module Lita
         Lita.logger.debug Lita.adapters[:slack].inspect
         Lita.logger.debug Lita.adapters[:slack]::API.inspect
         Lita.logger.debug robot.config.adapters.inspect
+        Lita.logger.debug robot.config.adapters.children.inspect
         Lita.logger.debug robot.config.adapters.call_api
         # slack_config = {token: Lita.config.adapters.slack.token}
         # Lita.logger.debug(slack_config)
