@@ -11,7 +11,7 @@ module Lita
             command: true)
 
       def handle_delete(response)
-        last_message = JSON.parse redis.get('slack_last')
+        last_message = redis.get('slack_last')
         Lita.logger.debug last_message.inspect
       end
     end
