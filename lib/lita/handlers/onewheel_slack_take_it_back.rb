@@ -16,6 +16,8 @@ module Lita
         Lita.logger.debug last_message['channel']
         Lita.logger.debug last_message['ts']
         Lita.logger.debug last_message['message']['user']
+        Lita.logger.debug Lita.adapters.inspect
+
       end
     end
 
