@@ -17,7 +17,7 @@ module Lita
         Lita.logger.debug last_message['ts']
         Lita.logger.debug last_message['message']['user']
         Lita.logger.debug Lita.adapters.inspect
-        Lita.adapters[:slack].call_api('delete')
+        Lita.adapters[:slack].API.call_api('delete')
       end
     end
 
