@@ -17,7 +17,7 @@ module Lita
         Lita.logger.debug last_message['ts']
         Lita.logger.debug last_message['message']['user']
         Lita.logger.debug Lita.adapters.inspect
-        Lita.adapters[:slack].inspect
+        Lita.logger.debug Lita.adapters[:slack].inspect
       end
     end
 
